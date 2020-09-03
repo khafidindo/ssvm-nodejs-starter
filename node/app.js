@@ -1,19 +1,23 @@
-const { random } = require('../pkg/ssvm_nodejs_starter_lib.js');
+const express = require('express');
+const { calculate } = require('../pkg/ssvm_nodejs_starter_lib.js');
 
-const http = require('http');
-const url = require('url');
-const hostname = '0.0.0.0';
-const port = 5000;
+const app = express();
+const port = 3000;
+app.use(express.static(__dirname + '/public'));
+app.use(express.urlencoded({ extended: false }));
+/*
+var bodyParser = require('body-parser')
+app.use(bodyParser.urlencoded({
+  extended: true
+})); 
+*/
 
-const server = http.createServer((req, res) => {
-  const queryObject = url.parse(req.url,true).query;
-  if (!queryObject['name']) {
-    res.end(`Please use command curl http://${hostname}:${port}/?name=MyName \n`);
-  } else {
-    res.end(random(queryObject['name']) + '\n');
-  }
-});
+app.get('/', (req, res) => res.redirect("/index.html"));
 
-server.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
-});
+app.post('/solve', function (req, res) {
+  var p = parseFloat(req.body.price);
+  var q = parseFloat(req.body.qty);
+  res.send(calculate(p, q))
+})
+
+app.listen(port, () => console.log(`Listening at http://localhost:${port}`))
