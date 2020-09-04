@@ -1,7 +1,8 @@
 # Introduction
-Simple application to convert temperature fron celcius to fahrenheit, built using node.js, express, webassembly with rust.
+Simple application to convert temperature from celcius to fahrenheit, built using node.js, express, webassembly with rust.
 
 # Installing
+Pro Tip: If your connection is slow, or your disk is less capacity. You can use Google Cloud Shell.
 1. (host) First you need to pull docker image from secondstate  
     `docker pull secondstate/ssvm-nodejs-starter:v1`  
 2. (host) Clone this repo    
@@ -19,6 +20,7 @@ Simple application to convert temperature fron celcius to fahrenheit, built usin
 8. (docker) Run application  
     `node node/app.js`  
 9. Test your app by open http://hostname:3000 in browser
+
 # Getting started  
 
 ![Build and test](https://github.com/second-state/ssvm-nodejs-starter/workflows/Build%20and%20test/badge.svg)
