@@ -10,9 +10,15 @@ Simple application to convert temperature fron celcius to fahrenheit, built usin
     `cd ssvm-nodejs-starter`
 4. (host) Create container instance  
     `docker run -p 3000:3000 -it -v $(pwd):/app secondstate/ssvm-nodejs-starter:v1`  
-5. (docker) Run application  
+5. (docker) Change directory to root app  
+    `cd /app`
+6. (docker) Build wasm module, and wait until succes no error  
+    `ssvmup build'  
+7. (docker) Install express.js  
+    `npm install express`  
+8. (docker) Run application  
     `node node/app.js`  
-6. Test your app by open http://hostname:3000 in browser
+9. Test your app by open http://hostname:3000 in browser
 # Getting started  
 
 ![Build and test](https://github.com/second-state/ssvm-nodejs-starter/workflows/Build%20and%20test/badge.svg)
