@@ -2,17 +2,18 @@
 Simple application to convert temperature fron celcius to fahrenheit, built using node.js, express, webassembly with rust.
 
 # Installing
-1. First you need to pull docker image from secondstate
-    `docker pull secondstate/ssvm-nodejs-starter:v1`
-2. Create container instance
-    `docker run -p 3000:3000 -it -v $(pwd):/app secondstate/ssvm-nodejs-starter:v1`
-3. Clone this repo
+1. (host) First you need to pull docker image from secondstate  
+    `docker pull secondstate/ssvm-nodejs-starter:v1`  
+2. (host) Clone this repo    
     `git clone https://github.com/khafidindo/ssvm-nodejs-starter`  
-4.Change directory to git repository
-    `ssvm-nodejs-starter`
-5.Run application
-    `node node/app.js`
-# Getting started
+3. (host) Change directory to git repository   
+    `cd ssvm-nodejs-starter`
+4. (host) Create container instance  
+    `docker run -p 3000:3000 -it -v $(pwd):/app secondstate/ssvm-nodejs-starter:v1`  
+5. (docker) Run application  
+    `node node/app.js`  
+6. Test your app by open http://hostname:3000 in browser
+# Getting started  
 
 ![Build and test](https://github.com/second-state/ssvm-nodejs-starter/workflows/Build%20and%20test/badge.svg)
 
