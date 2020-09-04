@@ -14,7 +14,7 @@ Pro Tip: If your connection is slow, or your disk is less capacity. You can use 
 5. (docker) Change directory to root app  
     `cd /app`
 6. (docker) Build wasm module, and wait until succes no error  
-    `ssvmup build'  
+    `ssvmup build`  
 7. (docker) Install express.js  
     `npm install express`  
 8. (docker) Run application  
