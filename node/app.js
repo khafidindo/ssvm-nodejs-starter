@@ -1,5 +1,5 @@
 const express = require('express');
-const { calculate } = require('../pkg/ssvm_nodejs_starter_lib.js');
+const { celcius_to_fahrenheit } = require('../pkg/ssvm_nodejs_starter_lib.js');
 
 const app = express();
 const port = 3000;
@@ -15,9 +15,8 @@ app.use(bodyParser.urlencoded({
 app.get('/', (req, res) => res.redirect("/index.html"));
 
 app.post('/solve', function (req, res) {
-  var p = parseFloat(req.body.price);
-  var q = parseFloat(req.body.qty);
-  res.send(calculate(p, q))
+  var celcius = req.body.celcius;
+  res.send(celcius_to_fahrenheit(celcius))
 })
 
 app.listen(port, () => console.log(`Listening at http://localhost:${port}`))
